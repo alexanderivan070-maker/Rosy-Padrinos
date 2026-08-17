@@ -1,34 +1,45 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(rgba(15, 23, 30, 0.85), rgba(15, 23, 30, 0.85)), url('img/fondo.jpeg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 10px;
     margin: 0;
     min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    background-color: #0f171e;
+}
+
+/* Imagen o fondo por si acaso */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: url('img/fondo.jpeg') center/cover no-repeat;
+    filter: brightness(0.4);
+    z-index: -1000;
 }
 
 .container {
-    max-width: 650px;
-    margin: 0 auto;
-    background: rgba(22, 27, 34, 0.85);
-    padding: 25px;
-    border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.7);
+    width: 92%;
+    max-width: 600px;
+    margin: 15px auto;
+    background: rgba(22, 27, 34, 0.9);
+    padding: 18px;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.8);
     border: 1px solid #f1c40f44;
     backdrop-filter: blur(6px);
+    box-sizing: border-box;
 }
 
 .img-circle-container {
-    width: 110px; 
-    height: 110px;
+    width: 90px; 
+    height: 90px;
     border-radius: 50%;
     overflow: hidden;
     border: 3px solid #f1c40f;
-    margin: 0 auto 15px;
+    margin: 0 auto 12px;
     background: #fff;
 }
 .logo-img { 
@@ -39,22 +50,23 @@ body {
 
 h1 { 
     color: #f1c40f; 
-    font-size: 1.3rem; 
-    margin-bottom: 15px; 
+    font-size: 1.15rem; 
+    margin-bottom: 12px; 
+    line-height: 1.4;
 }
 
-/* Contador Regresivo */
+/* Contador Regresivo adaptado */
 #countdown-box {
-    background: rgba(0, 0, 0, 0.5);
-    padding: 12px;
-    border-radius: 12px;
-    margin: 15px 0;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 10px;
+    margin: 12px 0;
     border: 1px solid #ffffff15;
 }
 #countdown { 
     display: flex; 
     justify-content: space-around; 
-    font-size: 1.4rem; 
+    font-size: 1.2rem; 
     font-weight: bold; 
     color: #f1c40f; 
 }
@@ -63,75 +75,78 @@ h1 {
     flex-direction: column; 
 }
 #countdown small { 
-    font-size: 0.7rem; 
+    font-size: 0.65rem; 
     color: #ced6e0; 
     font-weight: normal; 
 }
 
-/* Sección de Información alineada a la izquierda */
+/* Sección de Información */
 .info {
-    margin: 20px 0;
-    line-height: 1.6;
+    margin: 15px 0;
+    line-height: 1.5;
     text-align: left;
-    background: rgba(0, 0, 0, 0.3);
-    padding: 20px;
-    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 15px;
+    border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
 .titulo-invitacion {
     text-align: center;
     color: #f1c40f;
     font-weight: bold;
-    font-size: 1.1rem;
-    margin-bottom: 12px;
+    font-size: 0.95rem;
+    margin-bottom: 10px;
 }
 .texto-invitacion {
-    font-size: 0.95rem;
-    margin-bottom: 15px;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
     color: #ecf0f1;
     text-align: justify;
 }
 .detalles-lista {
-    margin: 15px 0;
+    margin: 12px 0;
     display: flex;
     flex-direction: column;
-    gap: 6px;
-    font-size: 0.98rem;
+    gap: 5px;
+    font-size: 0.9rem;
 }
 .premio {
     color: #f1c40f;
     font-weight: bold;
-    margin: 15px 0;
+    margin: 12px 0;
     text-align: center;
+    font-size: 0.9rem;
 }
 .invitacion-musica {
     text-align: center;
     font-style: italic;
-    margin: 15px 0;
+    margin: 12px 0;
     color: #dfe4ea;
+    font-size: 0.9rem;
 }
 .contactos {
     text-align: center;
     color: #f1c40f;
     font-weight: bold;
-    margin-top: 15px;
+    margin-top: 12px;
+    font-size: 0.9rem;
 }
 
 .titulo-seccion {
     color: #f1c40f;
-    font-size: 1rem;
-    margin: 25px 0 10px 0;
-    letter-spacing: 1px;
+    font-size: 0.85rem;
+    margin: 20px 0 8px 0;
+    letter-spacing: 0.5px;
 }
 
-/* Carrusel estilo Polaroid / Foto Impresa */
+/* Carrusel estilo Polaroid adaptado para móviles */
 .slider-container {
-    margin: 20px 0;
+    margin: 15px 0;
 }
 .slider {
     position: relative;
     width: 100%;
-    height: 340px;
+    height: 260px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -139,14 +154,14 @@ h1 {
 .slider img {
     position: absolute;
     max-width: 85%;
-    max-height: 310px;
+    max-height: 240px;
     width: auto;
     height: auto;
     object-fit: contain;
     background: white;
-    padding: 10px 10px 25px 10px;
+    padding: 8px 8px 20px 8px;
     border-radius: 4px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
     transform: rotate(2deg);
     opacity: 0;
     transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
@@ -157,14 +172,14 @@ h1 {
 }
 
 .slider-dots {
-    margin-top: 12px;
+    margin-top: 10px;
     display: flex;
     justify-content: center;
-    gap: 8px;
+    gap: 6px;
 }
 .dot {
-    width: 9px;
-    height: 9px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
     background: #57606f;
     display: inline-block;
@@ -175,10 +190,10 @@ h1 {
 
 /* Botones */
 .confirmacion { 
-    margin: 20px 0; 
+    margin: 15px 0; 
 }
 .btn-confirm { 
-    padding: 14px; 
+    padding: 12px; 
     background-color: #27ae60; 
     color: white; 
     border: none; 
@@ -186,54 +201,48 @@ h1 {
     width: 100%; 
     font-weight: bold; 
     cursor: pointer; 
-    font-size: 1rem;
+    font-size: 0.95rem;
     transition: 0.3s; 
-    box-shadow: 0 4px 12px rgba(39, 174, 96, 0.4);
 }
 .btn-confirm:hover { 
     background-color: #219150; 
 }
 
 .ubicacion { 
-    margin-top: 25px; 
-    padding-top: 15px; 
+    margin-top: 20px; 
+    padding-top: 12px; 
     border-top: 1px solid #ffffff15; 
 }
 .ubicacion h3 {
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: #f1c40f;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 .btn-maps { 
     display: block; 
-    padding: 12px; 
+    padding: 11px; 
     background-color: #f1c40f; 
     color: #1a252f; 
     text-decoration: none; 
     border-radius: 10px; 
     font-weight: bold; 
+    font-size: 0.95rem;
     transition: 0.3s; 
 }
-.btn-maps:hover { 
-    background-color: #d4ac0d; 
-}
 
-/* Botón flotante de música */
+/* Botón flotante de música más cómodo en móvil */
 .music-btn { 
     position: fixed; 
-    top: 20px; 
-    right: 20px; 
+    top: 10px; 
+    right: 10px; 
     background: #f1c40f; 
     color: #1a252f; 
     border: none; 
-    padding: 10px 16px; 
+    padding: 8px 12px; 
     border-radius: 20px; 
     font-weight: bold; 
+    font-size: 0.85rem;
     cursor: pointer; 
     z-index: 1000; 
-    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-    transition: 0.2s;
-}
-.music-btn:hover {
-    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
 }
