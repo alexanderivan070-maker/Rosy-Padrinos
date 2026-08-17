@@ -1,33 +1,39 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Contador Regresivo al 19/09/2026 a las 20:00:00
     const fechaEvento = new Date('2026-09-19T20:00:00').getTime();
 
-    const actualizarContador = setInterval(() => {
+    setInterval(() => {
         const ahora = new Date().getTime();
-        const diferencia = fechaEvento - ahora;
-
-        const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
-        const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
-        const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
-
-        document.getElementById('days').innerText = dias;
-        document.getElementById('hours').innerText = horas;
-        document.getElementById('minutes').innerText = minutos;
-        document.getElementById('seconds').innerText = segundos;
-
-        if (diferencia < 0) {
-            clearInterval(actualizarContador);
-            document.getElementById('countdown').innerText = "¡La fiesta ha comenzado!";
-        }
+        const diff = fechaEvento - ahora;
+        document.getElementById('days').innerText = Math.floor(diff / (1000*60*60*24));
+        document.getElementById('hours').innerText = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+        document.getElementById('minutes').innerText = Math.floor((diff % (1000*60*60)) / (1000*60));
+        document.getElementById('seconds').innerText = Math.floor((diff % (1000*60)) / 1000);
     }, 1000);
+
+    // Iniciar carrusel
+    let index = 0;
+    const slides = document.querySelectorAll('.slider img');
+    const dots = document.querySelectorAll('.dot');
+    setInterval(() => {
+        slides.forEach(s => s.classList.remove('active'));
+        dots.forEach(d => d.classList.remove('active'));
+        index = (index + 1) % slides.length;
+        slides[index].classList.add('active');
+        dots[index].classList.add('active');
+    }, 3500);
 });
 
-// Función para confirmar asistencia vía WhatsApp
+function toggleMusic() {
+    const m = document.getElementById('background-music');
+    if (m.paused) { m.play(); document.getElementById('music-status').innerText = "⏸️ Pausa"; }
+    else { m.pause(); document.getElementById('music-status').innerText = "▶️ Play"; }
+}
+
+window.addEventListener('click', () => {
+    const m = document.getElementById('background-music');
+    if (m.paused) { m.play().catch(() => {}); document.getElementById('music-status').innerText = "⏸️ Pausa"; }
+}, { once: true });
+
 function confirmarAsistencia() {
-    const numeroWhatsApp = "59168633503"; 
-    const mensaje = "¡Hola! Confirmo mi asistencia a la Fiesta de Ex-Promociones de la U.E. Lotte Salzgeber.";
-    const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
-    
-    window.open(url, '_blank');
+    window.open("https://wa.me/59168633503?text=Confirmo%20mi%20asistencia", '_blank');
 }

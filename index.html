@@ -3,35 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invitación Fiesta de Ex-Promociones</title>
+    <title>Fiesta de Ex-Promociones - U.E. Lotte Salzgeber</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- Audio de fondo -->
+    <audio id="background-music" loop>
+        <source src="musica.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Botón flotante de música -->
+    <button id="music-btn" onclick="toggleMusic()" class="music-btn">
+        🎵 <span id="music-status">▶️ Play</span>
+    </button>
+
     <div class="container">
+        <!-- Logo superior -->
+        <div class="header-images">
+            <div class="img-circle-container">
+                <img src="img/logo.jpeg" alt="Logo U.E." class="logo-img">
+            </div>
+        </div>
+
         <header>
             <h1>FIESTA DE EX PROMOCIONES<br>U.E. LOTTE SALZGEBER</h1>
-            <p class="fecha">19/09/2026</p>
-            <p class="hora">08:00 pm</p>
         </header>
 
         <!-- Contador Regresivo -->
-        <div id="countdown">
-            <span id="days">0</span>d : <span id="hours">0</span>h : <span id="minutes">0</span>m : <span id="seconds">0</span>s
+        <div id="countdown-box">
+            <div id="countdown">
+                <div><span id="days">0</span><small>Días</small></div>
+                <div><span id="hours">0</span><small>Horas</small></div>
+                <div><span id="minutes">0</span><small>Minutos</small></div>
+                <div><span id="seconds">0</span><small>Segundos</small></div>
+            </div>
         </div>
 
+        <!-- Sección de Información Detallada -->
         <section class="info">
-            <p>✨ ¡YA SE VIENE LA FIESTA DE EXPROMOCIONES! ✨</p>
-            <p>La Promo 2007 tiene el enorme agrado de invitar a toda la comunidad educativa y a los queridos exalumnos de la U.E. Lotte Salzgeber a vivir una noche inolvidable.</p>
+            <p class="titulo-invitacion">✨ ¡YA SE VIENE LA FIESTA DE EXPROMOCIONES! ✨</p>
+            <p class="texto-invitacion">
+                La Promo 2007 ("Una promoción siempre imitada, nunca igualada") tiene el enorme agrado de invitar a toda la comunidad educativa y a los queridos exalumnos de la U.E. Lotte Salzgeber a vivir una noche inolvidable de reencuentro, recuerdos y grandes momentos.
+            </p>
             
-            <ul class="detalles">
-                <li>📅 <b>Fecha:</b> 19 de Septiembre</li>
-                <li>⏰ <b>Hora:</b> 20:00 (8:00 PM)</li>
-                <li>📍 <b>Lugar:</b> Las Tablitas, San Ignacio de Velasco</li>
-                <li>🎟️ <b>Entrada:</b> 25 Bs.</li>
-            </ul>
-            
-            <p>🏆 ¡Habrá premios especiales a la promo más numerosa y divertida!</p>
-            <p>📞 <b>Informes y reservas:</b> 68633503 / 72857546 / 77089263</p>
+            <div class="detalles-lista">
+                <p>📅 <b>Fecha:</b> 19 de Septiembre</p>
+                <p>⏰ <b>Hora:</b> 20:00 (8:00 PM)</p>
+                <p>📍 <b>Lugar:</b> Las Tablitas</p>
+                <p>🎟️ <b>Entrada:</b> 25 Bs.</p>
+            </div>
+
+            <p class="premio">🏆 ¡Habrá premios especiales a la promo más numerosa y más divertida!</p>
+            <p class="invitacion-musica">¡Ven a compartir risas, abrazos y buena música junto al grupo SOM Santa Cruz! ¡No te lo pierdas!</p>
+            <p class="contactos">📞 <b>Informes y reservas:</b> 68633503 / 72857546 / 77089263</p>
+        </section>
+
+        <!-- Título sección momentos -->
+        <h3 class="titulo-seccion">LUGAR DEL EVENTO "LAS TABLITAS" / MOMENTOS</h3>
+
+        <!-- Carrusel con fotos estilo Polaroid -->
+        <section class="slider-container">
+            <div class="slider">
+                <img src="img/promo.jpeg" alt="Promo 2007" class="slide active">
+                <img src="img/deporte.jpeg" alt="Deporte" class="slide">
+            </div>
+            <div class="slider-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+            </div>
         </section>
 
         <!-- Botón de Confirmación -->
@@ -39,15 +79,15 @@
             <button onclick="confirmarAsistencia()" class="btn-confirm">🎉 ¡Confirmar Asistencia!</button>
         </div>
 
+        <!-- Ubicación Google Maps -->
         <section class="ubicacion">
             <h3>📍 ¿Cómo llegar?</h3>
-            <a href="https://www.google.com/maps/place/16%C2%B022'41.4%22S+60%C2%B058'15.7%22W/@-16.3781758,-60.9735959,17z/data=!3m1!4b1!4m4!3m3!8m2!3d-16.3781758!4d-60.971021?hl=es&entry=ttu&g_ep=EgoyMDI2MDgxMi4wIKXMDSoASAFQAw%3D%3D" 
-               target="_blank" 
-               class="btn-maps">
-               Ver ubicación en Google Maps
+            <a href="https://www.google.com/maps/place/16%C2%B022'41.4%22S+60%C2%B058'15.7%22W" target="_blank" class="btn-maps">
+               Abrir ubicación en Google Maps
             </a>
         </section>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
