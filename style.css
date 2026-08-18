@@ -21,11 +21,11 @@ body::before {
 }
 
 .container {
-    width: 92%;
-    max-width: 600px;
-    margin: 15px auto;
+    width: 95%;
+    max-width: 950px; /* <--- AQUÍ AMPLIAMOS EL ANCHO MÁXIMO PARA PC */
+    margin: 20px auto;
     background: rgba(22, 27, 34, 0.9);
-    padding: 18px;
+    padding: 25px;
     border-radius: 18px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.8);
     border: 1px solid #f1c40f44;
@@ -83,7 +83,7 @@ h1 {
 /* Sección de Información */
 .info {
     margin: 15px 0;
-    line-height: 1.5;
+    line-height: 1.6;
     text-align: left;
     background: rgba(0, 0, 0, 0.4);
     padding: 15px;
@@ -110,6 +110,12 @@ h1 {
     gap: 5px;
     font-size: 0.9rem;
 }
+
+/* Estilos específicos para la sección de Padrinos */
+.seccion-padrinos {
+    margin: 15px 0;
+    padding: 10px 0;
+}
 .premio {
     color: #f1c40f;
     font-weight: bold;
@@ -117,6 +123,41 @@ h1 {
     text-align: center;
     font-size: 0.9rem;
 }
+.padrinos-texto {
+    font-size: 0.9rem;
+    color: #ecf0f1;
+    text-align: justify;
+    margin-bottom: 12px;
+}
+.lista-padrinos-grid {
+    list-style: none;
+    padding: 0;
+    margin: 12px auto;
+    display: table;
+    text-align: left;
+}
+.lista-padrinos-grid li {
+    background: none;
+    padding: 2px 0;
+    border: none;
+    border-radius: 0;
+    font-size: 0.9rem;
+    color: #ecf0f1;
+    margin-bottom: 4px;
+}
+.lista-padrinos-grid li span {
+    color: #f1c40f;
+    font-weight: bold;
+    margin-right: 6px;
+}
+.padrinos-firma {
+    font-size: 0.9rem;
+    color: #ecf0f1;
+    text-align: center;
+    margin-top: 15px;
+    font-style: italic;
+}
+
 .invitacion-musica {
     text-align: center;
     font-style: italic;
@@ -130,6 +171,55 @@ h1 {
     font-weight: bold;
     margin-top: 12px;
     font-size: 0.9rem;
+}
+
+/* ==========================================
+   ESTILOS NUEVOS PARA LA SECCIÓN DEL QR APORTE
+   ========================================== */
+.seccion-qr-aporte {
+    background: rgba(15, 15, 15, 0.75);
+    border: 2px solid #f1c40f;
+    border-radius: 12px;
+    padding: 15px;
+    margin: 20px 0 10px 0;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+.qr-titulo {
+    color: #f1c40f;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+.qr-texto {
+    color: #ecf0f1;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    text-align: center;
+}
+.qr-contenedor-img {
+    background: #ffffff;
+    display: inline-block;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+.qr-img {
+    width: 160px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+.qr-nota {
+    color: #ced6e0;
+    font-size: 0.75rem;
+    margin-top: 10px;
+    font-style: italic;
+    line-height: 1.4;
+    text-align: center;
 }
 
 .titulo-seccion {
